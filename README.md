@@ -12,14 +12,17 @@
 
 - [Spring Security Oauth2 Social](#spring-security-oauth2-social)
 - [목차](#%EB%AA%A9%EC%B0%A8)
+- [구성](#%EA%B5%AC%EC%84%B1)
 - [프로젝트 셋팅](#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%85%8B%ED%8C%85)
-    - [maven](#maven)
-    - [application.yml](#applicationyml)
-- [목차](#%EB%AA%A9%EC%B0%A8)
+  - [maven](#maven)
+  - [application.yml](#applicationyml)
 
 <!-- /TOC -->
 
-
+# 구성
+* [step-00: gogole, facebook, https 설정](https://github.com/cheese10yun/spring-security-oauth2-social/blob/master/doc/step-00.md)
+* step-01 : google, facebook 간단한 소셜 인증 방법
+* step-02: 데이터베이스에 회원 정보 저장
 
 # 프로젝트 셋팅
 * **Lombok이 반드시 설치 되있어야 합니다.**
@@ -70,10 +73,6 @@ google :
     userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
 ```
 
-**반드시 위의 설정을 application.yml 추가해야합니다.**
+* **반드시 위의 설정을 application.yml 추가해야합니다.**
 
 
-# 목차
-
-* step-01 : google, facebook 간단한 소셜 인증 방법
-* step-02: 데이터베이스에 회원 정보 저장
