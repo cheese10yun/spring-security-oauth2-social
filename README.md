@@ -13,8 +13,8 @@
   - [Intell J 설치 : [Intellij] lombok 사용하기](http://blog.woniper.net/229)
 
 # 목차
-* [step-00: gogole, facebook, https 설정](https://github.com/cheese10yun/spring-security-oauth2-social/blob/master/doc/step-00.md)
-* [step-01 : google, facebook 간단한 소셜 인증 방법](https://github.com/cheese10yun/spring-security-oauth2-social/blob/master/doc/step-01.md)
+* [step-00: Google, Facebook, https 설정](https://github.com/cheese10yun/spring-security-oauth2-social/blob/master/doc/step-00.md)
+* [step-01: Google, Facebook 간단한 소셜 인증](https://github.com/cheese10yun/spring-security-oauth2-social/blob/master/doc/step-01.md)
 * step-02: 데이터베이스에 회원 정보 저장 ... 추가 예정
 
 

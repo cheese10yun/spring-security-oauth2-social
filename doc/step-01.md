@@ -1,4 +1,4 @@
-# 소셜 인증
+# Google, Facebook 간단한 소셜 인증
 
 Spring Scurity OAuth2를 활용해서 Facebook, Google 계정 기반으로 정말 간단하게 인증 처리를 할 수 있습니다. 들어가기에 앞서 [OAuth 2인증 방식 : Authorization Code Grant](https://github.com/minwan1/spring-security-oauth2-example/blob/master/docs/step-1%3Aoauth1%2Coauth2%EB%9E%80.md#%EC%9D%B8%EC%A6%9D-%EC%A2%85%EB%A5%98) **반드시 기본적인 이해를 하시는것을 권장드립니다.** [생활코딩](https://www.youtube.com/watch?v=hm2r6LtUbk8&index=1&list=PLuHgQVnccGMA4guyznDlykFJh28_R08Q-)에도 잘 정의되어있습니다.
 
