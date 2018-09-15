@@ -77,12 +77,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     private Filter ssoFilter(ClientResources client, String path) {
-        OAuth2ClientAuthenticationProcessingFilter oAuth2ClientAuthenticationFilter = new OAuth2ClientAuthenticationProcessingFilter(path);
-        OAuth2RestTemplate oAuth2RestTemplate = new OAuth2RestTemplate(client.getClient(), oauth2ClientContext);
-        oAuth2ClientAuthenticationFilter.setRestTemplate(oAuth2RestTemplate);
+        OAuth2ClientAuthenticationProcessingFilter filter = new OAuth2ClientAuthenticationProcessingFilter(path);
+        OAuth2RestTemplate restTemplate = new OAuth2RestTemplate(client.getClient(), oauth2ClientContext);
+        filter.setRestTemplate(restTemplate);
         UserInfoTokenServices tokenServices = new UserInfoTokenServices(client.getResource().getUserInfoUri(), client.getClient().getClientId());
-        tokenServices.setRestTemplate(oAuth2RestTemplate);
-        oAuth2ClientAuthenticationFilter.setTokenServices(tokenServices);
-        return oAuth2ClientAuthenticationFilter;
+        filter.setTokenServices(tokenServices);
+        tokenServices.setRestTemplate(restTemplate);
+        return filter;
     }
 }

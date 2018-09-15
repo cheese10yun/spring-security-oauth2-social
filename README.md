@@ -24,54 +24,15 @@
 * step-01 : google, facebook 간단한 소셜 인증 방법
 * step-02: 데이터베이스에 회원 정보 저장
 
-# 프로젝트 셋팅
+# 프로젝트 구성
+
 * **Lombok이 반드시 설치 되있어야 합니다.**
   - [Eclipse 설치 : [lombok] eclipse(STS)에 lombok(롬복) 설치](http://countryxide.tistory.com/16)
   - [Intell J 설치 : [Intellij] lombok 사용하기](http://blog.woniper.net/229)
 
-## maven
-```xml
-<dependency>
-    <groupId>org.springframework.security.oauth</groupId>
-    <artifactId>spring-security-oauth2</artifactId>
-    <version>2.3.3.RELEASE</version>
-</dependency>
 
-<dependency>
-    <groupId>org.springframework.security.oauth.boot</groupId>
-    <artifactId>spring-security-oauth2-autoconfigure</artifactId>
-    <version>2.0.0.RELEASE</version>
-</dependency>
-```
 
-## application.yml
 
-```yml
-facebook:
-  client:
-    clientId: <your-client-id>
-    clientSecret: <your-secret>
-    accessTokenUri: https://graph.facebook.com/oauth/access_token
-    userAuthorizationUri: https://www.facebook.com/dialog/oauth
-    tokenName: oauth_token
-    authenticationScheme: query
-    clientAuthenticationScheme: form
-  resource:
-    userInfoUri: https://graph.facebook.com/me
-
-google :
-  client :
-    clientId : <your-client>
-    clientSecret: <your-secret>
-    accessTokenUri: https://www.googleapis.com/oauth2/v4/token
-    userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
-    clientAuthenticationScheme: form
-    scope:
-    - email
-    - profile
-  resource:
-    userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
-```
 
 * **반드시 위의 설정을 application.yml 추가해야합니다.**
 
