@@ -4,16 +4,14 @@
 
 
 # 프로젝트 구성
-
 * Java8
 * Spring boot 2.0
-
 * **Lombok이 반드시 설치 되있어야 합니다.**
   - [Eclipse 설치 : [lombok] eclipse(STS)에 lombok(롬복) 설치](http://countryxide.tistory.com/16)
   - [Intell J 설치 : [Intellij] lombok 사용하기](http://blog.woniper.net/229)
 
 # 목차
-* [step-00: Google, Facebook, https 설정](https://github.com/cheese10yun/spring-security-oauth2-social/blob/master/doc/step-00.md)
+* [step-00: Google, Facebook, HTTPS 설정](https://github.com/cheese10yun/spring-security-oauth2-social/blob/master/doc/step-00.md)
 * [step-01: Google, Facebook 간단한 소셜 인증](https://github.com/cheese10yun/spring-security-oauth2-social/blob/master/doc/step-01.md)
 * step-02: 데이터베이스에 회원 정보 저장 ... 추가 예정
 
