@@ -20,13 +20,14 @@ public class SocialService {
 
     private final UserService userService;
 
-    public UsernamePasswordAuthenticationToken doSomething(UserConnection userConnection) {
+    public UsernamePasswordAuthenticationToken doAuthentication(UserConnection userConnection) {
 
         if (userService.isExistUser(userConnection)) {
-            // 로그인 처리
+            // 기존 회원일 경우에는 데이터베이스에서 조회해서 인증 처리
             final User user = userService.findBySocial(userConnection);
             return setAuthenticationToken(user);
         } else {
+            // 새 회원일 경우 회원가입 이후 인증 처리
             final User user = userService.signUp(userConnection);
             return setAuthenticationToken(user);
 
