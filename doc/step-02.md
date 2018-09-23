@@ -53,7 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 }
 ```
-[step-01: Google, Facebook 간단한 소셜 인증](https://github.com/cheese10yun/spring-security-oauth2-social/blob/master/doc/step-01.md)의 SecurityConfig 에서 조금 변경 한 내용들입니다.
+[step-01: Google, Facebook 간단한 소셜 인증](https://github.com/cheese10yun/spring-security-oauth2-social/blob/master/doc/step-01.md)의 SecurityConfig 에서 조금 변경한 내용입니다.
 
 달라진 점은 크게 없고 GoogleOAuth2ClientAuthenticationProcessingFilter, FacebookOAuth2ClientAuthenticationProcessingFilter의 클래스를 기반으로 필터에 등록시켰습니다. 이때 소셜 가입 및 로그인 처리를 담당하는 SocialService를 생성자를 통해서 주입해주었습니다.
 
@@ -92,11 +92,11 @@ OAuth2ClientAuthenticationProcessingFilter 클래스를 상속 받아서 구현�
 
 `restTemplate.getAccessToken()` 메서드를 통해서 해당 유저의 access token 정보를 가져옵니다.
 
-인자로 넘겨 받은 authResult 객체에 소셜에서 넘겨 받은 정보를 details 겍체에 넘겨 받습니다. 이 때 넘겨받은 정보를 ObejctMapper를 이용해서 FacebookUserDetails로 변환 합니다.
+인자로 넘겨받은 authResult 객체에 소셜에서 넘겨받은 정보를 details 객체에 넘겨받습니다. 이때 넘겨받은 정보를 ObejctMapper를 이용해서 FacebookUserDetails로 변환 합니다.
 
-[step-01: Google, Facebook 간단한 소셜 인증](https://github.com/cheese10yun/spring-security-oauth2-social/blob/master/doc/step-01.md#%EB%82%B4%EB%B6%80-%EC%BD%94%EB%93%9C)에서 보셨듯 소셜에 넘겨주는 profile 객체는 LinkedHashMap의 형태입니다. 실제 런타임 전까지는 정확한 자료형을 확인 하기가 어렵습니다. 그래서 FacebookUserDetails DTO 클래스 이용하는 것이 가독성 및 유지보수하기 좋다고 생각합니다.
+[step-01: Google, Facebook 간단한 소셜 인증](https://github.com/cheese10yun/spring-security-oauth2-social/blob/master/doc/step-01.md#%EB%82%B4%EB%B6%80-%EC%BD%94%EB%93%9C)에서 보셨듯 소셜에 넘겨주는 profile 객체는 LinkedHashMap의 형태입니다. 실제 런타임 전까지는 정확한 자료형을 확인하기가 어렵습니다. 그래서 FacebookUserDetails DTO 클래스 이용하는 것이 가독성 및 유지 보수하기 좋다고 생각합니다.
 
-FacebookUserDetails 객체를 기반으로 UserConnection 객체를 만듭니다. UserConnection 객체는 아래에서 설명하겠습니다. 
+FacebookUserDetails 객체를 기반으로 UserConnection 객체를 만듭니다. UserConnection 객체는 아래에서 설명하겠습니다.
 
 
 ### doAuthentication 메서드
@@ -116,7 +116,7 @@ public UsernamePasswordAuthenticationToken doAuthentication(UserConnection userC
     }
 }
 ```
-Data JPA에 대한 설명은 하지 않겠습니다. 데이터베이스에서 회원 존재 유뮤를 확인후 기존 회원일 경우는 바로 인증 회우너 정보를 리턴합니다. 그렇지 않고 신규 회원일 경우에는 회원 가입을 진행 시킵니다. 이 때 user_conncection, user 테이블에 두 곳 모두 저장 시킵니다.
+Data JPA에 대한 설명은 하지 않겠습니다. 데이터베이스에서 회원 존재 유무를 확인 후 기존 회원일 경우는 바로 인증 회원 정보를 리턴합니다. 그렇지 않고 신규 회원일 경우에는 회원 가입을 진행 시킵니다. 이때 user_conncection, user 테이블에 두 곳 모두 저장시킵니다.
 
 ```
 Hibernate: 
@@ -202,8 +202,8 @@ public class UserConnection {
 }
 ```
 
-코드는 길지만 말하고자하는 것은 단순합니다. 지금 프로젝트에서는 소셜 가입 외에는 회원 인증 절차(회원가입)가 없다는 가정입니다. 
+코드는 길지만 말하고자 하는 것은 단순합니다. 지금 프로젝트에서는 소셜 가입 외에는 회원 인증 절차(회원가입)가 없다는 가정입니다. 
 
-그렇다는 것은 UserConnection 객체가 만들어지는 이유는 단 한가지입니다. Google, Facebook를 통한 회원 인증일 경우입니다. UserConnection 위의 코드를 보시면 알겠지만 UserConnection 객체를 만들수 있는 것은 방법은 `valueOf` 객체 뿐입니다. (JPA 프록시객체 때문에 protected 생성자는 만들어야 합니다.)
+그렇다는 것은 UserConnection 객체가 만들어지는 이유는 단 한 가지입니다. Google, Facebook를 통한 회원 인증일 경우입니다. UserConnection 위의 코드를 보시면 알겠지만 UserConnection 객체를 만들 수 있는 것은 방법은 `valueOf` 객체뿐입니다. (JPA 프록시객체 때문에 protected 생성자는 만들어야 합니다.)
 
-이 처럼 객체의 생성도 명확한 근거외에는 생성을 제한 하는 좋은 구조라고 생각합니다. 또 User 객체도 만찬가지입니다. 소셜 회원 가입이외에는 회원가입이 없기 때문에 User 객체는 UserConnection를 기반으로 만드는 방법 말고 재공하지 않는 것도 마찬가지 입니다.
+이 처럼 객체의 생성도 명확한 근거 외에는 생성을 제한하는 좋은 구조라고 생각합니다. 또 User 객체도 마찬가지입니다. 소셜 회원 가입 이외에는 회원가입이 없으므로 User 객체는 UserConnection를 기반으로 만드는 방법 말고 제공하지 않는 것도 마찬가지입니다.
