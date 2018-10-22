@@ -30,7 +30,7 @@
 
 ## Authorization Code Grant Type 방식
 
-![oauth2-doe-grant-type](/assets/oauth2-doe-grant-type_gnojt19me.png)
+![oauth2-doe-grant-type](https://github.com/cheese10yun/TIL/raw/master/assets/oauth2-doe-grant-type_gnojt19me.png)
 
 * (1) 클라이언트가 파리미터러 클라이언트 ID, 리다이렉트 URI, 응답 타입을 code로 지정하여 권한 서버에 전달합니다. 정상적으로 인증이 되면 권한 코드 부여 코드를 클라이언트에게 보냅니다.
   - 응답 타입은 code, token 이 사용 가능합니다.
@@ -40,7 +40,7 @@
 
 ## Implicit Grant 방식
 
-![Implicit Grant](/assets/Implicit%20Grant.png)
+![Implicit Grant](https://github.com/cheese10yun/TIL/raw/master/assets/Implicit%20Grant.png)
 
 * (1) 클라이언트가 파리미터러 클라이언트 ID, 리다이렉트 URI, 응답 타입을 code로 지정하여 권한 서버에 전달합니다. 정상적으로 인증이 되면 권한 코드 부여 코드를 클라이언트에게 보냅니다.
   - 응답 타입은 code, token 이 사용 가능합니다.
@@ -51,7 +51,7 @@
 
 ## Resource Owner Password Credentials Grant 방식
 
-![Resource Owner Password Credentials Grant](/assets/Resource%20Owner%20Password%20Credentials%20Grant.png)
+![Resource Owner Password Credentials Grant](https://github.com/cheese10yun/TIL/raw/master/assets/Resource%20Owner%20Password%20Credentials%20Grant.png)
 
 * (1) 인증을 진행합니다. 대부분 ID, Password를 통해서 자격 증명이 진행됩니다.
 * (2) 넘겨 받은 정보기반으로 권한 서버에 Access Token 정보를 요청합니다.
@@ -60,10 +60,13 @@
 
 ## Client Credentials Grant Type 방식
 
-![Client Credentials Grant Type](/assets/Client%20Credentials%20Grant%20Type.png)
+![Client Credentials Grant Type](https://github.com/cheese10yun/TIL/raw/master/assets/Client%20Credentials%20Grant%20Type.png)
 
 * (1) Access Token 정보를 요청합니다.
 * (3) Access Token 정보를 응답합니다. 이때 Refresh Token 정보는 응답하지 않는 것을 권장합니다. 별다른 인증 절차가 없기 떄문에 Refresh Token 까지 넘기지 않는 것이라고 생각합니다.
 * (4) Access Token 기반으로 Resource Server와 통신합니다.
 
 
+# 참고
+* [OAuth2 이해하기](http://www.bubblecode.net/en/2016/01/22/understanding-oauth2/)
+* [처음으로 배우는 스프링 부트2](http://www.hanbit.co.kr/store/books/look.php?p_code=B4458049183)
