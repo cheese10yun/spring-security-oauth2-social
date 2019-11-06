@@ -34,6 +34,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final SocialService socialService;
 
 
+@Override
+    public void configure(WebSecurity web) {
+        web.ignoring()
+                .antMatchers(HttpMethod.OPTIONS, "/**")
+
+                // allow anonymous resource requests
+                .antMatchers(
+                        "/",
+                        "/*.html",
+                        "/favicon.ico",
+                        "/**/*.html",
+                        "/**/*.css",
+                        "/**/*.js",
+                        "/h2-console/**"
+                );
+    }	
+	
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // @formatter:off

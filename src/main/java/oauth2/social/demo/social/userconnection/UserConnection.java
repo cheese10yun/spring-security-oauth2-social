@@ -13,8 +13,10 @@ import javax.persistence.*;
 @Table(name = "user_connection")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-public class UserConnection {
+public class UserConnection implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
