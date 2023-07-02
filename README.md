@@ -1,3 +1,5 @@
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fcheese10yun%2Fspring-security-oauth2-social&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
 # Spring Security Oauth2 Social
 
 소셜 인증 관련 자료들이 다양하고 필요 없는 설정들 까지 있어 복잡성이 높아 보여 Spring Security Oauth2를 활용 하여정말 심플하게 소셜 인증 관련 코드를 작성해 보았습니다. 지속해서 해당 프로젝트를 이어 나아갈 예정이라 깃허브 Start, Watching 버튼을 누르시면 구독 신청받으실 수 있습니다. 
